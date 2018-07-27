@@ -11,6 +11,11 @@ const phrases = [
     "Patience is a virtue"
 ];
 
+//
+// START
+//
+
+
 $( start ).click(function() {
     document.getElementById('overlay').style.display = 'none';
 });
@@ -32,8 +37,22 @@ $( start ).click(function() {
 //start.addEventListener('click', startGame()
 //);
 
+//
+// PHRASE ARRAY
+//
+
 function getRandomPhraseArray(arr){
     console.log(choosePhrase);
     console.log(arr[choosePhrase]);
+    let phraseLength = arr[choosePhrase].length;
+    console.log(phraseLength);
+
+    for (i = 0; i < phraseLength; i++) {
+        var phraseLetters = [];
+        phraseLetters[i] = arr[choosePhrase].substr(i, 1);
+        console.log(phraseLetters[i]);
+    }
+
+    //function returns NEW ARRAY???????
 }
 getRandomPhraseArray(phrases);
