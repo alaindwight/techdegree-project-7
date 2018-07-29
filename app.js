@@ -84,9 +84,10 @@ function addPhraseToDisplay(arr){
 addPhraseToDisplay(phraseLetters);
 
 function checkLetter (arr){
-    for (i = 0; i < phraseLetters.length; i++) {
-        if (arr == phraseLetters[i]) {
-            //apply show class to element
+    var letters = document.getElementsByClassName("letter");
+    for (i = 0; i < letters.length; i++) {
+        if (arr == letters.item(i)) {
+            letters.item(i).className = "show";
         }
         else{
             return null;
