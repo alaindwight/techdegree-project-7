@@ -85,12 +85,32 @@ addPhraseToDisplay(phraseLetters);
 
 function checkLetter (arr){
     var letters = document.getElementsByClassName("letter");
+    var noMatch = true;
     for (i = 0; i < letters.length; i++) {
-        if (arr == letters.item(i)) {
+        if (arr == letters.item(i).innerHTML.toUpperCase()) {
+            console.log('match');
             letters.item(i).className = "show";
-        }
-        else{
-            return null;
+            noMatch = false;
         }
     }
+    if (noMatch == true) {
+        console.log('nomatch');
+        return null;
+    }
 }
+
+//Keyboard event listener
+qwerty.addEventListener("click", function(e) {
+    // e.target = key clicked
+	if( e.target.nodeName == "BUTTON") {
+        console.log(e.target.innerHTML.toUpperCase());
+        e.target.className = "chosen";
+        e.target.disabled = true;
+        checkLetter (e.target.innerHTML.toUpperCase());
+
+	}
+});
+
+//Count misses
+
+//Check win
