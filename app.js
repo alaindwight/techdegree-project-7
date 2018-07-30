@@ -11,31 +11,6 @@ const phrases = [
     "Patience is a virtue"
 ];
 
-//
-// START
-//
-
-
-$( start ).click(function() {
-    document.getElementById('overlay').style.display = 'none';
-});
-
-//
-// JS START BUTTONS THAT DON'T WORK... Why????
-//
-
-//start.addEventListener('click', () => {
-    
-  //  document.getElementById('overlay').style.display = 'none';
-//});
-
-//(function startGame() {
-//    document.getElementById('overlay').style.display = 'none';
-//})();
-
-
-//start.addEventListener('click', startGame()
-//);
 
 //
 // PHRASE ARRAY
@@ -58,11 +33,6 @@ function getRandomPhraseArray(arr){
     return phraseLetters;
 }
 
-const phraseLetters = getRandomPhraseArray(phrases);
-
-console.log(getRandomPhraseArray(phrases));
-
-
 function addPhraseToDisplay(arr){
 
     for (i = 0; i < phraseLetters.length; i++) {
@@ -81,8 +51,6 @@ function addPhraseToDisplay(arr){
     }
 }
 
-addPhraseToDisplay(phraseLetters);
-
 function checkLetter (arr){
     var letters = document.getElementsByClassName("letter");
     var noMatch = true;
@@ -99,6 +67,36 @@ function checkLetter (arr){
     }
 }
 
+// verify spaces aren't being passed with a letter class
+// verify show class doesn't ovwrite letter class
+// why is show class not applying to all Es for disciplien is freedom????
+// last R in pain is temporary
+// luck favors the bold, strive through life work, patience is a virtue work
+function checkWin(){
+    if (getElementsByClassName("letter").length === getElementsByClassName("show").length) {
+        console.log("WIN");
+    }
+
+    else if (misses = 5){
+        console.log("LOSE");
+    }
+}
+
+//
+// START
+//
+
+$( start ).click(function() {
+    document.getElementById('overlay').style.display = 'none';
+});
+
+const phraseLetters = getRandomPhraseArray(phrases);
+console.log(getRandomPhraseArray(phrases));
+
+addPhraseToDisplay(phraseLetters);
+
+
+
 //Keyboard event listener
 qwerty.addEventListener("click", function(e) {
     // e.target = key clicked
@@ -107,18 +105,20 @@ qwerty.addEventListener("click", function(e) {
         e.target.className = "chosen";
         e.target.disabled = true;
         let letterFound = checkLetter (e.target.innerHTML.toUpperCase());
-        if (letterFound === null){
+
+        //Count misses
+        if (letterFound === null){            
             missed = missed + 1;
             console.log("misses: " + missed);
-            console.log(document.getElementsByClassName("tries"));
             document.getElementsByClassName("tries")[missed-1].style.display = 'none';
         }
-	}
+    }
+    
+    
+    checkWin();
 });
 
-//Count misses
 
-//Check win
 
 //reset
 
