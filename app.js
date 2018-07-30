@@ -106,11 +106,20 @@ qwerty.addEventListener("click", function(e) {
         console.log(e.target.innerHTML.toUpperCase());
         e.target.className = "chosen";
         e.target.disabled = true;
-        checkLetter (e.target.innerHTML.toUpperCase());
-
+        let letterFound = checkLetter (e.target.innerHTML.toUpperCase());
+        if (letterFound === null){
+            missed = missed + 1;
+            console.log("misses: " + missed);
+            console.log(document.getElementsByClassName("tries"));
+            document.getElementsByClassName("tries")[missed-1].style.display = 'none';
+        }
 	}
 });
 
 //Count misses
 
 //Check win
+
+//reset
+
+//transitions
