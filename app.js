@@ -113,8 +113,9 @@ function reset(){
     }
 
     // generate a new random phrase
+    choosePhrase = Math.floor(Math.random() * 5);
     phraseLetters = getRandomPhraseArray(phrases);
-    console.log(getRandomPhraseArray(phrases));
+    console.log(phraseLetters);
 
     addPhraseToDisplay(phraseLetters);
 
@@ -155,10 +156,3 @@ qwerty.addEventListener("click", function(e) {
     
     checkWin();
 });
-
-
-
-
-
-
-//TRANSITIONS
