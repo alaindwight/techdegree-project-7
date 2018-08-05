@@ -92,6 +92,7 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  transition: background-color 1.5s;
 }
 
 .space {
@@ -151,6 +152,11 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+}
+
+.overlay h2{
+  padding-top: 20%;
+  padding-bottom: 30px;
 }
 
 .title {
