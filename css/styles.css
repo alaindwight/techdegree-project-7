@@ -140,6 +140,19 @@ button {
   border-radius: 5px;
 }
 
+.overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
 .title {
   color: #FFF;
 }
@@ -154,6 +167,7 @@ button {
 
 .win {
   background-color: var(--color-win);
+  display: none;
 }
 
 .win a {
@@ -162,6 +176,7 @@ button {
 
 .lose {
   background-color: var(--color-lose);
+  display: none;
 }
 
 .lose a {
