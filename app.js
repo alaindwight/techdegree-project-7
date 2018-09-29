@@ -107,7 +107,7 @@ function reset(){
     for (i = 0; i < 5; i++)
     document.getElementsByClassName("tries")[i].style.display = 'inline-block';
 
-    // erase previous phase
+    // erase previous phrase
     while(document.getElementsByClassName("letter")[0]){
     document.getElementsByClassName("letter")[0].parentNode.removeChild(document.getElementsByClassName("letter")[0]);
     }
